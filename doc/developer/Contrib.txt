@@ -1,0 +1,79 @@
+
+ DEVELOPER DOCUMENTATION
+ ------------------------------
+
+ 1) Quick-and-dirty directions
+    ------------------------------
+    
+    Nope. No room for dirty job. For a quick start, please, have a quick read
+    of the follow brief instruction. Make sure to follow it thoroughly before
+    starting your contribution. Then you'll be fully armed for the quick tips
+    you're looking for. They are right at the end of this document. 
+
+ 2) General directions
+    ------------------------------
+    
+    (to be updated)
+
+ 3) Development environment
+    ------------------------------
+    
+    (to be updated)
+
+ 4) Repository policy
+    ------------------------------
+    
+    (to be updated)
+
+ 5) How to start contributing
+    ------------------------------
+    
+    (to be updated)
+
+ 6) The quick tips you're looking for
+    ------------------------------ 
+
+    Straight to the point directions.
+
+    * Make changes:
+
+       a) edit, remove and add files in source directory (src);
+       b) update Makefile and Dockerfile accordingly;
+       c) build RPS image and start a new instance;
+       d) test it locally using a web browser.
+
+       By default, development version listens to port 8080; you may
+       override defaults using Make's command line arguments.
+
+       Refer to Makefile for available rules and options.
+
+
+    * Build the image: 
+
+      	    src/$ make
+
+      The image will be rebuilt on any dependency change.
+
+    * Bring up the container:
+
+      	    src/$ make start
+
+      This will automatically (re)build the image.
+
+    * Shut down the container:
+
+      	    src/$ make stop
+
+      This won't remove the image.
+
+    * Wipe off both the container and the image:
+
+      	   src/$ make cleanup
+
+    * Log into a running container and get a bash prompt
+
+           src/$ make login
+
+      Log out by issuing 'exit' at bash prompt
+
+      
