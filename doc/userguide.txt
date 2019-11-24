@@ -1,0 +1,29 @@
+
+ POLLEX USER GUIDE
+ ------------------------------
+        _
+       | \        
+       | |___
+ _____/  (___)    Pollex: from Latin 'pollex', thumb.
+|o|     (_____)
+|_|____	 (____)   A thumbs-up tool for collaborative teams.
+       \_(___)   
+
+
+  Pollex is an open source web-based application for conducing online polls.
+
+  Quick start
+  ------------------------------
+
+  The software is still under pre-alpha stage and detailed usage instructions
+  are still to be compiled. As for now, refer to the source code.
+
+  (To be updated as soon as possible).
+
+
+
+  
+  
+
+
+ 

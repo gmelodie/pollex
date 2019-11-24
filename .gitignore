@@ -105,3 +105,7 @@ venv.bak/
 
 # vscode editor local configs
 .vscode
+
+# Local stuff
+*~
+\#*

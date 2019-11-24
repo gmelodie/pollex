@@ -1,0 +1,114 @@
+
+ DEVELOPER DOCUMENTATION
+ ------------------------------
+
+ 1) General directions
+    ------------------------------
+
+    These guidelines are for project developers.
+
+    For general contribution, see Contrib.md
+
+    Please, read this document thoroughly go get a quick overview on
+    development policies and tools.
+
+ 2) Development environment
+    ------------------------------
+    
+    Development environment uses
+
+      * Python 3.7.5
+      * Flask 1.1.1 
+      * Docker 18.09.7
+
+    For convenience, if you rather prefer an off-the-shelf working
+    environment, you may build and launch a developer container which
+    already has all the tools installed and configured. The developer
+    container may be build from project directory 'devel'.
+
+ 3) Repository policy
+    ------------------------------
+    
+    Repository management is based on Git Flow [1] branching strategy.
+    Release policy is based on Semantic Versioning [2] scheme.
+
+       [1] https://nvie.com/posts/a-successful-git-branching-model/
+       [2] https://semver.org/
+
+
+    To start a new feature branch, first create an issue in the repository
+    management software --- give it a descriptive title and provide suitable
+    details in the comments.
+
+    Either if you have created a new issue or if you are picking up an existing
+    issue to work on, you should create a new feature branch, unless one already
+    exists. 
+
+    Branch naming convention:
+
+       branches are named <type>/<title>, where <type> is one of the following
+
+       * feature addition change:          feature
+       * bug fixes                         fix
+       * project documentation:		   doc
+       * work on progress:		   wip
+       * experimental work		   junk
+
+    Use wip with title <your_name> if you need to upload a branch for discussions
+    or to make it available in another development environment. Both wip and
+    junk branches should be cleaned up as soon as they are become unnecessary.
+
+    Versioning convention:
+
+        we use semantic versioning with stage extensions
+
+	x.y.z-alpha-n	is an alpha release of future x.y.z, revision n
+	x.y.z-beta-n	is a beta release of future x.y.z, revision n
+	x.y.z-rc-n	is a release candidate of future x.y.z, revision n
+	x.y.z		is the stable release of z.y.z
+
+ 4) Quick tips
+    ------------------------------ 
+
+    * Make changes:
+
+       a) edit, remove and add files in source directory (src);
+       b) update Makefile and Dockerfile accordingly;
+       c) build RPS image and start a new instance;
+       d) test it locally using a web browser.
+
+       By default, development version listens to port 8080; you may
+       override defaults using Make's command line arguments.
+
+       Refer to Makefile for available rules and options.
+
+
+    * Build the image: 
+
+      	    src/$ make
+
+      The image will be rebuilt on any dependency change.
+
+    * Bring up the container:
+
+      	    src/$ make start
+
+      This will automatically (re)build the image.
+
+    * Shut down the container:
+
+      	    src/$ make stop
+
+      This won't remove the image.
+
+    * Wipe off both the container and the image:
+
+      	   src/$ make cleanup
+
+    * Log into a running container and get a bash prompt
+
+           src/$ make login
+
+      Log out by issuing 'exit' at bash prompt
+
+      

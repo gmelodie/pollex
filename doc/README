@@ -1,0 +1,49 @@
+
+ POLLEX DOCUMENTATION
+ ------------------------------
+        _
+       | \        
+       | |___
+ _____/  (___)    Pollex: from Latin 'pollex', thumb.
+|o|     (_____)
+|_|____	 (____)   A thumbs-up tool for collaborative teams.
+       \_(___)   
+ 
+ Pollex is a web-based application for conducing online polls.
+
+ The software currently features
+
+   a) multiple choice polls with varying decision criteria
+   b) event scheduling consensus with priority assignments 
+
+ User Documentation
+ ------------------------------
+ 
+ Pollex user guide can be found in file userguide.txt.
+
+ Developer Documentation
+ ------------------------------
+
+ Directory pollex/doc/developers contains useful information for developers
+ willing to contribute to the project. If this is for you, please, start
+ by reading contrib.txt file.
+
+ Copyright and licensing
+ ------------------------------
+
+ Pollex is free software: you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
+ 
+ Pollex is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+
+ You should have received a copy of the GNU General Public License
+ along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+ For authoring and copyright iformation, please refer to file AUTHORS.
+ 
+
