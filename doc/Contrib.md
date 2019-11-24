@@ -23,7 +23,7 @@
   Finally, get to work!
 
   - Your changes should follow the Pollex coding conventions:
-    - This includes writing a good comments for parts of your code that may be hard for others to understand;
+    - This includes writing good comments for parts of your code that may be hard for others to understand;
     - Follow the [PEP 8 - Style Guide for Python Code](https://www.python.org/dev/peps/pep-0008/) 
   - Test your code!
 
@@ -49,7 +49,7 @@
 
  ## 3) Repository policy
   This repository uses GNU GENERAL PUBLIC LICENSE.
-  Everyone are welcome. Don't behave like Linus Torvalds, respect everyone who spends their time transforming this idea into a real project.
+  Everyone are welcome. Be nice, respect everyone who spends their time transforming this idea into a real project.
 
   
 
