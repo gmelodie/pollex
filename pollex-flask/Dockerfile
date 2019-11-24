@@ -35,8 +35,8 @@ RUN pip install flask
 # Copy application files into the image
 
 COPY index.py .
-COPY templates/* templates/
-COPY static/* static/
+# COPY templates/* templates/
+# COPY static/* static/
 
 # By default, the container will listen to port 5000 internally
 
