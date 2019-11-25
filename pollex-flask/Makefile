@@ -46,7 +46,7 @@ MAKE = make
 
 # Sources
 
-sources = index.py # templates/*.html static/*.css
+sources = run.py # templates/*.html static/*.css
 
 # Do it all
 
