@@ -34,9 +34,10 @@ RUN pip install flask
 
 # Copy application files into the image
 
-COPY index.py .
-# COPY templates/* templates/
-# COPY static/* static/
+COPY run.py .
+COPY app app/
+COPY config config/
+COPY instance instance/
 
 # By default, the container will listen to port 5000 internally
 
@@ -44,9 +45,9 @@ EXPOSE 5000
 
 # Start WSGI application
 
-ENV FLASK_APP=index.py
+ENV FLASK_APP=run.py
 ENV FLASK_ENV=development
 
 ENTRYPOINT ["python"]
-CMD ["index.py"]
+CMD ["run.py"]
 

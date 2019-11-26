@@ -46,7 +46,7 @@ MAKE = make
 
 # Sources
 
-sources = index.py # templates/*.html static/*.css
+sources = run.py app/* config/* instance/*
 
 # Do it all
 
