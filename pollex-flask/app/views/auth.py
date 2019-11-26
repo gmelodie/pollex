@@ -6,8 +6,8 @@ auth_module = Blueprint('auth', __name__, url_prefix='/auth')
 @auth_module.route('', methods=['POST'])
 def authenticate_user():
     try:
-        username = request.json('username')
-        password = request.json('password')
+        username = request.json['username']
+        password = request.json['password']
 
         # TODO: verify user
         user = {}
