@@ -50,4 +50,4 @@ ENV FLASK_ENV=development
 
 ENTRYPOINT ["python"]
 CMD ["run.py"]
-
+LABEL status="current"

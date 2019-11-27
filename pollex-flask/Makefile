@@ -56,6 +56,8 @@ all : $(RP_IMAGE)
 
 $(RP_IMAGE) : $(RP_SOURCE) $(sources)
 	$(RPS) build -t $(RP_IMAGE) .
+	@echo "Removing dangling previous version image"
+	@$(RPS) image prune -f --filter "label=status=current"	
 
 # Start and stop RP instance
 
