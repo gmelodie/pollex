@@ -46,11 +46,17 @@ MAKE = make
 
 # Sources
 
-sources = run.py app/* config/* instance/*
+instance = instance/config.py
+
+sources = run.py app/* config/* $(instance)
 
 # Do it all
 
 all : $(RP_IMAGE)
+
+instance/config.py:
+	install -d instance
+	touch instance/config.py
 
 # Build RP image
 
