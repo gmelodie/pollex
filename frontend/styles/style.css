@@ -59,3 +59,13 @@
     bottom:0;
     width:100%;
 }
+
+.rounded-r-pill {
+    border-top-right-radius: 9999px;
+    border-bottom-right-radius: 9999px
+}
+
+.rounded-l-pill {
+    border-top-left-radius: 9999px;
+    border-bottom-left-radius: 9999px;
+}
