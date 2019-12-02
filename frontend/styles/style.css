@@ -69,3 +69,21 @@
     border-top-left-radius: 9999px;
     border-bottom-left-radius: 9999px;
 }
+
+.border-l-primary {
+    border-left: #007BFF 5px solid !important;
+    border-top-left-radius: .25rem;
+    border-bottom-left-radius: .25rem;
+}
+
+.border-l-danger {
+    border-left:  #D9534F  5px solid !important;
+    border-top-left-radius: .25rem;
+    border-bottom-left-radius: .25rem;
+}
+
+.border-l-success {
+    border-left:  #5CB85C  5px solid !important;
+    border-top-left-radius: .25rem;
+    border-bottom-left-radius: .25rem;
+}
