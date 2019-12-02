@@ -1,0 +1,62 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css?family=Nunito&display=swap');
+
+.font-weight-semibold {
+  font-weight: 600;
+}
+
+.text-lg {
+  font-size: 1.125rem;
+}
+
+.nunito {
+  font-family: 'Nunito', sans-serif;
+}
+
+.hover-primary:hover{
+  color : #007BFF !important;
+}
+
+.py-16 {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+.py-36 {
+  padding-top: 9rem;
+  padding-bottom: 9rem;
+}
+
+.px-16 {
+  padding-left: 4rem;
+  padding-right: 4rem;
+}
+
+.mb-20 {
+  margin-bottom: 5rem;
+}
+
+.mt-16 {
+  margin-top: 4rem;
+}
+
+.mt-36 {
+  margin-top: 9rem;
+}
+
+.no-outline {
+  border: none !important;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 9999;
+}
+
+.footer {
+  position:absolute;
+  bottom:0;
+  width:100%;
+}
