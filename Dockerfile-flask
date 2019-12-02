@@ -1,4 +1,4 @@
-# Makefile - Build script for pollex-flask
+# Dcokerfile - Docker build script for pollex-flask
 #
 #    Copyright (c) 2019 - Open Source Competencer Center ICMC-USP
 #
@@ -17,32 +17,35 @@
 #    You should have received a copy of the GNU General Public License
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-# QUICK START
-# 
-# Pollex is meant to run within a Runtime Parition System (RPS).
-# Currently, the project uses Docker as the RPS.
-# Available build targets:
-#
-#   all:	builds RP image (Docker image)
-#   start:	bring up RP instance (Docker container)
-#   stop:	gring down RP instance
-#   login:      login into a running RP instance
-#   clean:	remove temporary files
-#   cleanup:    cleans and remove RP image
+# Application is currently based on Ubuntu and Python
 
-# Do it all
+FROM ubuntu:19.10
+FROM python:3.7
+#FROM node:12.13.1
 
-all : $(RP_IMAGE)
+# Application home directory
 
-instance/config.py:
-	install -d instance
-	touch instance/config.py
+RUN mkdir /home/pollex
 
-.PHONY: clean
+WORKDIR /home/pollex
 
-# Clean temporary files
+# We need Flask framework (there's currently no official Docker image)
 
-clean:
-	rm -f *~
+RUN pip install flask
 
+# Copy application files into the image
 
+COPY pollex-flask .
+
+# By default, the container will listen to port 5000 internally
+
+EXPOSE 5000
+
+# Start WSGI application
+
+ENV FLASK_APP=run.py
+ENV FLASK_ENV=development
+
+ENTRYPOINT ["python"]
+CMD ["run.py"]
+LABEL status="current"
