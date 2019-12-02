@@ -102,3 +102,9 @@
     border: #EEEEEE 1px solid;
     border-radius: .5rem;
 }
+
+svg > g > g:last-child { pointer-events: none }
+
+div[dir="ltr"] {
+    overflow: hidden;
+}

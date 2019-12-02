@@ -73,7 +73,7 @@
         <!--Informações da votação-->
         <div class="row justify-content-around mt-5">
             <!--Opções de voto e outras informações-->
-            <div class="col-9 bg-white col-md-6 border-lg border-t-light-gray shadow-sm mb-5">
+            <div class="col-9 bg-white mb-3 col-md-7 border-lg border-t-light-gray shadow-sm">
                 <div class="my-4 ml-2">
                     <h3 class="text-primary">Título da votação</h3>
                     <span>Descrição do tema da votação e outros comentários</span>
@@ -126,14 +126,20 @@
             <!--------------------------------------->
 
             <!--Dados da votação-->
-            <div class="col-9 bg-white col-md-4 border-lg border-t-light-gray shadow-sm mb-5">
+            <div class="col-9 bg-white col-md-3 border-lg border-t-light-gray shadow-sm mb-5">
                 <div class="my-4 ml-2">
-                    <h3 class="text-primary mb-3">Resultados gerais</h3>
+                    <h3 class="text-primary">Resultados gerais</h3>
                 </div>
+                <div class="d-flex justify-content-center h-75">
+                    <div id="donutchart" class="" style="width: 95%; height: 95%;"></div>
+                </div>  
             </div>
             <!-------------------->
         </div>
         <!-------------------------->
     </div>
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript" src="../scripts/chart.js"></script>
 </body>
 </html>
