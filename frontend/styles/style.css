@@ -8,6 +8,10 @@
     font-size: 1.125rem;
 }
 
+.text-light-gray {
+    color: #D3D3DE;
+}
+
 .nunito {
     font-family: 'Nunito', sans-serif;
 }
@@ -72,18 +76,29 @@
 
 .border-l-primary {
     border-left: #007BFF 5px solid !important;
-    border-top-left-radius: .25rem;
-    border-bottom-left-radius: .25rem;
+    border-top-left-radius: .5rem;
+    border-bottom-left-radius: .5rem;
 }
 
 .border-l-danger {
     border-left:  #D9534F  5px solid !important;
-    border-top-left-radius: .25rem;
-    border-bottom-left-radius: .25rem;
+    border-top-left-radius: .5rem;
+    border-bottom-left-radius: .5rem;
 }
 
 .border-l-success {
     border-left:  #5CB85C  5px solid !important;
-    border-top-left-radius: .25rem;
-    border-bottom-left-radius: .25rem;
+    border-top-left-radius: .5rem;
+    border-bottom-left-radius: .5rem;
+}
+
+.border-t-light-gray {
+    border-top:  #D3D3DE 18px solid !important;
+    border-top-left-radius: .5rem;
+    border-top-right-radius: .5rem;
+}
+
+.border-lg {
+    border: #EEEEEE 1px solid;
+    border-radius: .5rem;
 }
