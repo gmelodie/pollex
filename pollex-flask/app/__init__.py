@@ -11,6 +11,8 @@ app.config.from_pyfile('config.py')
 
 # Import modules
 from app.views.auth import auth_module
+from app.views.polls import polls_module
 
 # Register Blueprints
 app.register_blueprint(auth_module)
+app.register_blueprint(polls_module)
