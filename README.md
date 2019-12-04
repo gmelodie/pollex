@@ -31,4 +31,4 @@
     
 - **Copyright and license information**
 
-   For author, copyprig and licensing information please refer to the respective files `AHTORS` and `COPYING`.
+   For author, copyprig and licensing information please refer to the respective files `AHTORS` and `LICENSE`.

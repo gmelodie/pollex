@@ -23,12 +23,29 @@
 # Currently, the project uses Docker as the RPS.
 # Available build targets:
 #
-#   all:	builds RP image (Docker image)
-#   start:	bring up RP instance (Docker container)
-#   stop:	gring down RP instance
-#   login:      login into a running RP instance
-#   clean:	remove temporary files
-#   cleanup:    cleans and remove RP image
+#   all:		build the docker images
+#
+#   image_flask: 	builds flask image
+#   image_angular:	builds angular image
+#   images:		built both images
+#
+#   start_flask:	starts flask container
+#   start_angular:	starts angular_container
+#   start:	        starts both containers
+#
+#   stop_flask:		stop flask container
+#   stop angular:       stop angular_container
+#   stop:		stop both containers
+#
+#   list:		lists application's containers and images
+#
+#   login_flask:	log into a running flask container (bash prompt)
+#   login_angular:	log into a running angular container (bash prompt)
+#
+#                           call 'exit' from the prompt to log out.
+#
+#   clean:		remove temporary files from work directory (as usual)
+#   cleanup:    	remove both flask's and angular's containers and images
 
 # User configs (defaults)
 
@@ -64,6 +81,10 @@ instance/config.py:
 	$(MAKE) -C polex-flask
 
 # Build RP image
+
+image_flask : $(FLASK_IMAGE)
+
+image_angular: $(ANGULAR_IMAGE)
 
 images : $(FLASK_IMAGE) $(ANGULAR_IMAGE)
 	@$(DOCKER) image prune -f --filter "label=status=current"	
@@ -103,7 +124,7 @@ stop_angular:
 	@echo "Container stopped and removed"
 
 
-.PHONY: start stop start_flask stop_flask start_angular stop_angular clean cleanup
+.PHONY: start stop start_flask stop_flask start_angular stop_angular clean cleanup image_flask image_angular images
 
 # Clean temporary files
 
