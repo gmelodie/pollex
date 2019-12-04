@@ -15,6 +15,8 @@
 
 *Pollex* was originally developed as a didactic project in an undergraduate course on Open Source Systems for Computer Science / Engineering students at University of São Paulo, with support of the ICMC Open Source Competence Center.
 
+As of today, the project is still under alpha release.
+
 ## Quick start
 
 - **Features and general information**
