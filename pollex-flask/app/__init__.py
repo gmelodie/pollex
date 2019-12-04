@@ -1,6 +1,5 @@
 from flask import Flask
 from os import getenv
-# Include SQLAlchemy here
 
 app = Flask(__name__, instance_relative_config=True)
 
@@ -8,6 +7,11 @@ app.config.from_object('config.default')
 if getenv('FLASK_ENV') == 'production': app.config.from_object('config.production')
 if getenv('FLASK_ENV') == 'development': app.config.from_object('config.development')
 app.config.from_pyfile('config.py')
+
+from app.database import db
+
+# Init database
+db.init_app(app)
 
 # Import modules
 from app.views.auth import auth_module
