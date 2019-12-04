@@ -13,7 +13,7 @@
  Pollex is a web-based application for conducing online polls.
 ```
 
-*Pollex* was originally developed as a didactic project in undergraduate course on Open Source Systems for Computer Science / Engineering students at University of São Paulo, with support of the ICMC Open Source Competence Center.
+*Pollex* was originally developed as a didactic project in an undergraduate course on Open Source Systems for Computer Science / Engineering students at University of São Paulo, with support of the ICMC Open Source Competence Center.
 
 ## Quick start
 
@@ -27,7 +27,7 @@
 
 - **Contributing to the project**
 
-    If you would be so kind as to contributing to _Pollex_ with either code, bug reports, suggestions and general feedback, please, start by reading the developer documentation at `doc/developer`
+    If you would be so kind as to contributing to _Pollex_ with either code, bug reports, suggestions or general feedback, please, start by reading the developer documentation at `doc/developer`
     
 - **Copyright and license information**
 
