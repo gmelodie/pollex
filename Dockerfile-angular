@@ -1,4 +1,4 @@
-# Dcokerfile - Docker build script for Pollex
+# Dcokerfile - Docker build script for pollex-angular
 #
 #    Copyright (c) 2019 - Open Source Competencer Center ICMC-USP
 #
@@ -21,33 +21,30 @@
 
 FROM ubuntu:19.10
 FROM python:3.7
+FROM node:12.13.1
 
 # Application home directory
 
-RUN mkdir /home/pollex
-
 WORKDIR /home/pollex
-
-# We need Flask framework (there's currently no official Docker image)
-
-RUN pip install flask
 
 # Copy application files into the image
 
-COPY run.py .
-COPY app app/
-COPY config config/
-COPY instance instance/
+COPY pollex-angular/ ./pollex-angular
+COPY frontend/ ./frontend
 
-# By default, the container will listen to port 5000 internally
+WORKDIR pollex-angular
 
-EXPOSE 5000
+# Seteup angular
 
-# Start WSGI application
+RUN npm install
+RUN npm install -g @angular/cli
+RUN npm install -g jquery@1.9.1 --save
 
-ENV FLASK_APP=run.py
-ENV FLASK_ENV=development
+# By default, the container will listen to port 4200 internally
 
-ENTRYPOINT ["python"]
-CMD ["run.py"]
-LABEL status="current"
+EXPOSE 4200
+
+# Start
+
+ENTRYPOINT [ "ng", "serve"]
+

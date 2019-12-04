@@ -21,21 +21,18 @@
 
 FROM ubuntu:19.10
 FROM python:3.7
-#FROM node:12.13.1
 
 # Application home directory
 
-RUN mkdir /home/pollex
-
 WORKDIR /home/pollex
 
-# We need Flask framework (there's currently no official Docker image)
+# We need Flask framework 
 
 RUN pip install flask
 
 # Copy application files into the image
 
-COPY pollex-flask .
+COPY pollex-flask ./pollex-flask
 
 # By default, the container will listen to port 5000 internally
 
@@ -46,6 +43,6 @@ EXPOSE 5000
 ENV FLASK_APP=run.py
 ENV FLASK_ENV=development
 
-ENTRYPOINT ["python"]
-CMD ["run.py"]
-LABEL status="current"
+WORKDIR pollex-flask
+
+ENTRYPOINT ["python", "run.py"]

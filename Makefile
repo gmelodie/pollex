@@ -32,8 +32,10 @@
 
 # User configs (defaults)
 
-PORT=8080
-FLASK_NAME=pollex
+FLASK_PORT=8081
+FLASK_NAME=pollex-flask
+ANGULAR_PORT=8080
+ANGULAR_NAME=pollex-angular
 VERSION=dev
 
 # Project configs
@@ -41,39 +43,67 @@ VERSION=dev
 FLASK_IMAGE = $(FLASK_NAME)\:$(VERSION)
 FLASK_CONTAINER = $(FLASK_NAME)-$(VERSION)
 FLASK_DOCKERFILE = Dockerfile-flask
+
+ANGULAR_IMAGE = $(ANGULAR_NAME)\:$(VERSION)
+ANGULAR_CONTAINER = $(ANGULAR_NAME)-$(VERSION)
+ANGULAR_DOCKERFILE = Dockerfile-angular
+
 DOCKER = docker
 MAKE = make
 
-# Sources
+# Sources (TODO: enumerate sources explicitly rather than just loading up everything)
 
 sources-flask = run.py app/* config/* instance/config.py
+sources-angular = *
 
 # Do it all
 
-all : $(FLASK_IMAGE)
+all : images 
 
 instance/config.py:
 	$(MAKE) -C polex-flask
 
 # Build RP image
 
+images : $(FLASK_IMAGE) $(ANGULAR_IMAGE)
+	@$(DOCKER) image prune -f --filter "label=status=current"	
+
+
 $(FLASK_IMAGE) : $(FLASK_DOCKERFILE) $(sources-flask:%=pollex-flask/%)
 	$(DOCKER) build -f $(FLASK_DOCKERFILE) -t $(FLASK_IMAGE) .
 	@echo "Removing dangling previous version image"
-	@$(DOCKER) image prune -f --filter "label=status=current"	
 
-# Start and stop RP instance
 
-start: $(FLASK_IMAGE)
-	$(MAKE) stop
-	$(DOCKER) run -itd -p 8080:5000 --name $(FLASK_CONTAINER) $(FLASK_IMAGE)
+$(ANGULAR_IMAGE) : $(ANGULAR_DOCKERFILE) $(sources-angular:%=pollex-angular/%)
+	$(DOCKER) build -f $(ANGULAR_DOCKERFILE) -t $(ANGULAR_IMAGE) .
+	@echo "Removing dangling previous version image"
 
-stop:
+# Start and stop containers
+
+start: start_flask start_angular
+
+stop: stop_flask stop_angular
+
+start_flask: $(FLASK_IMAGE)
+	$(MAKE) stop_flask
+	$(DOCKER) run -itd -p $(FLASK_PORT):5000 --name $(FLASK_CONTAINER) $(FLASK_IMAGE)
+
+stop_flask:
 	if ! $(DOCKER) stop -t 0 $(FLASK_CONTAINER)  ; then exit 0; fi 
 	if ! $(DOCKER) rm $(FLASK_CONTAINER) ; then exit 0; fi
 	@echo "Container stopped and removed"
 
-.PHONY: test
+start_angular: $(ANGULAR_IMAGE)
+	$(MAKE) stop_angular
+	$(DOCKER) run -itd -p $(ANGULAR_PORT):4200 --name $(ANGULAR_CONTAINER) $(ANGULAR_IMAGE)
+
+stop_angular:
+	if ! $(DOCKER) stop -t 0 $(ANGULAR_CONTAINER)  ; then exit 0; fi 
+	if ! $(DOCKER) rm $(ANGULAR_CONTAINER) ; then exit 0; fi
+	@echo "Container stopped and removed"
+
+
+.PHONY: start stop start_flask stop_flask start_angular stop_angular clean cleanup
 
 # Clean temporary files
 
@@ -84,7 +114,7 @@ clean:
 
 cleanup:
 	$(MAKE) stop
-	$(DOCKER) rmi $(FLASK_IMAGE)
+	$(DOCKER) rmi -f $(FLASK_IMAGE) $(ANGULAR_IMAGE)
 	$(MAKE) clean
 
 # List items
@@ -92,15 +122,22 @@ cleanup:
 list :
 	@$(DOCKER) images | grep $(FLASK_NAME) ; exit 0
 	@$(DOCKER) ps --all | grep $(FLASK_CONTAINER) ; exit 0
+	@$(DOCKER) images | grep $(ANGULAR_NAME) ; exit 0
+	@$(DOCKER) ps --all | grep $(ANGULAR_CONTAINER) ; exit 0
 
 list-image :
 	@$(DOCKER) images | grep $(FLASK_NAME) ; exit 0
+	@$(DOCKER) images | grep $(ANGULAR_NAME) ; exit 0
 
 list-instance :
 	@$(DOCKER) ps --all | grep $(FLASK_CONTAINER) ; exit 0
+	@$(DOCKER) ps --all | grep $(ANGULAR_CONTAINER) ; exit 0
 
 # Log in (leave with 'exit' at bash prompt)
 
-login:
+login_flask:
 	$(DOCKER) exec -it $(FLASK_CONTAINER) /bin/bash
+
+login_angular:
+	$(DOCKER) exec -it $(ANGULAR_CONTAINER) /bin/bash
 
