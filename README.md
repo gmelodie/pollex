@@ -10,7 +10,7 @@
 |_|____  (____)   A thumbs-up tool for collaborative teams.
        \_(___)   
  
- Pollex is a web-based application for conducing online polls.
+ Pollex is an open source application for conducing online polls.
 ```
 
 *Pollex* was originally developed as a didactic project in an undergraduate course on Open Source Systems for Computer Science / Engineering students at University of São Paulo, with support of the ICMC Open Source Competence Center.
@@ -23,7 +23,7 @@ As of today, the project is still under alpha release.
    
    For general overview and essential information, please refer to the text file `README`. 
 
-- **Inatalling the softwrare**
+- **Installing the software**
 
     For directions on building and installing _Pollex_, please refer to file `INSTALL`.
 
@@ -33,4 +33,4 @@ As of today, the project is still under alpha release.
     
 - **Copyright and license information**
 
-   For author, copyprig and licensing information please refer to the respective files `AHTORS` and `LICENSE`.
+   For author, copyright and licensing information please refer to the respective files `AUTHORS` and `LICENSE`.

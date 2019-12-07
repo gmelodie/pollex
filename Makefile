@@ -89,13 +89,11 @@ image_angular: $(ANGULAR_IMAGE)
 images : $(FLASK_IMAGE) $(ANGULAR_IMAGE)
 	@$(DOCKER) image prune -f --filter "label=status=current"	
 
-
-$(FLASK_IMAGE) : $(FLASK_DOCKERFILE) $(sources-flask:%=pollex-flask/%)
+$(FLASK_IMAGE) : clean_dangling $(FLASK_DOCKERFILE) $(sources-flask:%=pollex-flask/%)
 	$(DOCKER) build -f $(FLASK_DOCKERFILE) -t $(FLASK_IMAGE) .
-	@echo "Removing dangling previous version image"
 
 
-$(ANGULAR_IMAGE) : $(ANGULAR_DOCKERFILE) $(sources-angular:%=pollex-angular/%)
+$(ANGULAR_IMAGE) : clean_dangling $(ANGULAR_DOCKERFILE) $(sources-angular:%=pollex-angular/%)
 	$(DOCKER) build -f $(ANGULAR_DOCKERFILE) -t $(ANGULAR_IMAGE) .
 	@echo "Removing dangling previous version image"
 
@@ -124,7 +122,7 @@ stop_angular:
 	@echo "Container stopped and removed"
 
 
-.PHONY: start stop start_flask stop_flask start_angular stop_angular clean cleanup image_flask image_angular images
+.PHONY: start stop start_flask stop_flask start_angular stop_angular clean cleanup image_flask image_angular images clean_dangling
 
 # Clean temporary files
 
@@ -137,6 +135,11 @@ cleanup:
 	$(MAKE) stop
 	$(DOCKER) rmi -f $(FLASK_IMAGE) $(ANGULAR_IMAGE)
 	$(MAKE) clean
+
+clean_dangling:
+	@echo "Removing dangling previous version image"
+	@$(DOCKER) image prune -f --filter "label=status=current"	
+
 
 # List items
 
