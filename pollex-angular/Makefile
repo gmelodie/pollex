@@ -1,4 +1,4 @@
-# Makefile - Build script for pollex-flask
+# Makefile - Build script for pollex-angular
 #
 #    Copyright (c) 2019 - Open Source Competencer Center ICMC-USP
 #
@@ -18,11 +18,7 @@
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 
-all : instance/config.py
-
-instance/config.py:
-	install -d instance
-	touch instance/config.py
+all : 
 
 .PHONY: clean
 

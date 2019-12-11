@@ -1,4 +1,4 @@
-# Dcokerfile - Docker build script for Pollex
+# Dcokerfile - Docker build script for pollex-flask
 #
 #    Copyright (c) 2019 - Open Source Competencer Center ICMC-USP
 #
@@ -24,20 +24,15 @@ FROM python:3.7
 
 # Application home directory
 
-RUN mkdir /home/pollex
-
 WORKDIR /home/pollex
 
-# We need Flask framework (there's currently no official Docker image)
+# We need Flask framework 
 
 RUN pip install flask
 
 # Copy application files into the image
 
-COPY run.py .
-COPY app app/
-COPY config config/
-COPY instance instance/
+COPY pollex-flask ./pollex-flask
 
 # By default, the container will listen to port 5000 internally
 
@@ -48,6 +43,7 @@ EXPOSE 5000
 ENV FLASK_APP=run.py
 ENV FLASK_ENV=development
 
-ENTRYPOINT ["python"]
-CMD ["run.py"]
-LABEL status="current"
+WORKDIR pollex-flask
+
+ENTRYPOINT ["python", "run.py"]
+LABEL status=current

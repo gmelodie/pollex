@@ -1,4 +1,4 @@
-# Makefile - Build script for pollex-flask
+# Dcokerfile - Docker build script for pollex-angular
 #
 #    Copyright (c) 2019 - Open Source Competencer Center ICMC-USP
 #
@@ -17,18 +17,36 @@
 #    You should have received a copy of the GNU General Public License
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+# Application is currently based on Ubuntu and Python
 
-all : instance/config.py
+FROM ubuntu:19.10
+FROM python:3.7
+FROM node:12.13.1
 
-instance/config.py:
-	install -d instance
-	touch instance/config.py
+# Application home directory
 
-.PHONY: clean
+WORKDIR /home/pollex
 
-# Clean temporary files
+# Copy application files into the image
 
-clean:
-	rm -f *~
+COPY pollex-angular/ ./pollex-angular
+COPY frontend/ ./frontend
 
+WORKDIR pollex-angular
 
+# Seteup angular
+
+RUN npm install
+RUN npm install -g @angular/cli
+RUN npm install -g jquery@1.9.1 --save
+
+# By default, the container will listen to port 4200 internally
+
+EXPOSE 4200
+
+# Start
+
+#ENTRYPOINT  ["ng", "serve", "--host 0.0.0.0"]
+#ENTRYPOINT  ng serve --host 0.0.0.0
+CMD ng serve --host 0.0.0.0 
+LABEL status=current

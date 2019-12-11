@@ -1,0 +1,18 @@
+
+ Pollex INSTALL GUIDE
+ ------------------------------
+
+ ESSENTIAL INFORMATION
+
+ Pollex implementation follows a service-oriented architecture approach.
+ It is designed as a collection of web servers which interact by means of
+ a REST API. To thand end, Pollex currently uses Docker container framework.
+
+ QUICK DIRECTIONS
+
+ The software is built from the main project directory by using the
+ provided 'make' script. Please, refer to Makefile for available
+ build rules.
+
+
+ 
