@@ -28,3 +28,25 @@ def get_polls():
 
     except:
         return jsonify({"message": "expected a json with token"}), 400
+
+@polls_module.route('/<int:poll_id>')
+def get_poll(poll_id):
+    try:
+        token = request.json['token']
+
+        # here we are supposed to get the poll from the database
+        # poll = db.findPollById(poll_id)
+
+        # but for now let's define a testing poll
+        poll = jsonify({
+                "poll_id": 0,
+                "name": "test get poll",
+                "poll_owner": "a",
+                "votes_number": 5,
+                "total_votes": 13,
+                "created_date": "2019-11-24"
+        })
+        return poll
+    except:
+        return jsonify({"message": "expected a json with token"}), 400
+
