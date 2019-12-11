@@ -1,0 +1,70 @@
+POST - /auth {
+    Enviaremos:
+        body: {
+            "username": string,
+            "password": string
+        }
+    Precisamos receber:
+        {
+            "token": string
+        }
+}
+
+POST - /register {
+    Enviaremos:
+        body: {
+            "email": string,
+            "nome": string,
+            "nro_usp": string,
+            "password": string
+        }
+    Precisamos receber:
+        {
+            "token": string
+        }
+}
+
+GET - /polls {
+    Enviaremos:
+        header: {
+            "token": string
+        }
+    Precisamos receber:
+        {
+            polls: todas as pools do user. Com os seguinte atributos: id, nome, nome do criador, quantidade de pessoas que já votaram, total de votos, data de criação
+        }
+}
+
+GET - /polls/:pollId {
+    Enviaremos: 
+        header: {
+            "token": string
+        }
+    Precisamos receber os dados de uma poll:
+        {
+            Todos os dados
+        }
+}
+
+PATCH - /polls/:pollId {
+    Enviaremos:
+        header: {
+            "token": string
+        }
+        body: {
+            atributo a ser modificado
+        }
+    Precisamos receber só ums status de sucesso (200) ou falha (400)
+}
+
+POST - /polls/:pollId/vote {
+    Essa função deve votar OU alterar um voto
+    Enviaremos: 
+        header: {
+            "token": string
+        }
+        body: {
+            option (?)
+        }
+}
+

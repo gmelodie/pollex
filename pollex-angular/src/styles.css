@@ -5,6 +5,10 @@
   font-weight: 600;
 }
 
+.hover-underline:hover {
+  text-decoration: underline;
+}
+
 .text-lg {
   font-size: 1.125rem;
 }
@@ -15,6 +19,10 @@
 
 .hover-primary:hover{
   color : #007BFF !important;
+}
+
+.hover-bold:hover {
+  font-weight: bold;
 }
 
 .py-16 {
