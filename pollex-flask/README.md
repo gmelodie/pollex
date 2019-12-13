@@ -1,3 +1,5 @@
+# Pollex Flask API
+
 ## File structure
 ```
 pollex-flask
@@ -17,4 +19,18 @@ pollex-flask
 │
 └── instance/           # directory for sensitive information
     └── config.py       # overrides default config
+```
+## Testing
+To run the Flask API go to `pollex/pollex-flask/` and
+
+```
+$ flask run
+```
+
+Then (in another terminal) try it out. For example, to send a `POST` request with `cURL` to the `/polls/<poll_id>/vote`:
+```
+curl --header "Content-Type: application/json" \
+  --request POST \
+  --data '{"token":"123","option":"yes"}' \ # the json data
+  http://localhost:5000/polls/123/vote # the endpoint
 ```

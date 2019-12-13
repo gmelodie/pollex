@@ -50,3 +50,18 @@ def get_poll(poll_id):
     except:
         return jsonify({"message": "expected a json with token"}), 400
 
+@polls_module.route('/<int:poll_id>/vote', methods=['POST'])
+def register_vote(poll_id):
+    try:
+        token = request.json['token']
+        option = request.json['option']
+        # register vote
+
+        return jsonify(None), 204
+    except:
+        return jsonify({"message": "expected a json with token and option"}), 400
+
+
+
+
+
