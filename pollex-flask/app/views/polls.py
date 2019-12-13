@@ -57,7 +57,7 @@ def register_vote(poll_id):
         option = request.json['option']
         # register vote
 
-        return "Your vote was registered"
+        return jsonify(None), 204
     except:
         return jsonify({"message": "expected a json with token and option"}), 400
 
