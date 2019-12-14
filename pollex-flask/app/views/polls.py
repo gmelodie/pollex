@@ -66,6 +66,6 @@ def update_poll(poll_id):
                 "total_votes": 13,
                 "created_date": "2019-11-24"
         })
-        return poll
+        return jsonify(poll)
     except:
         return jsonify({"message": "unable to update poll"}), 400
