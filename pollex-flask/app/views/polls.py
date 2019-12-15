@@ -58,14 +58,14 @@ def update_poll(poll_id):
         # Update the poll
 
         # Return the updated poll
-        poll = jsonify({
+        poll = {
                 "poll_id": 0,
                 "name": "test get poll",
                 "poll_owner": "a",
                 "votes_number": 5,
                 "total_votes": 13,
                 "created_date": "2019-11-24"
-        })
+        }
         return jsonify(poll)
     except:
         return jsonify({"message": "unable to update poll"}), 400
