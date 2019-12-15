@@ -50,6 +50,28 @@ def get_poll(poll_id):
     except:
         return jsonify({"message": "expected a json with token"}), 400
 
+
+@polls_module.route('/<int:poll_id>', methods=['UPDATE'])
+def update_poll(poll_id):
+    try:
+        token = request.json['token']
+
+        # Update the poll
+
+        # Return the updated poll
+        poll = {
+                "poll_id": 0,
+                "name": "test get poll",
+                "poll_owner": "a",
+                "votes_number": 5,
+                "total_votes": 13,
+                "created_date": "2019-11-24"
+        }
+        return jsonify(poll)
+    except:
+        return jsonify({"message": "unable to update poll"}), 400
+
+      
 @polls_module.route('/<int:poll_id>/vote', methods=['POST'])
 def register_vote(poll_id):
     try:
@@ -60,8 +82,4 @@ def register_vote(poll_id):
         return jsonify(None), 204
     except:
         return jsonify({"message": "expected a json with token and option"}), 400
-
-
-
-
 
