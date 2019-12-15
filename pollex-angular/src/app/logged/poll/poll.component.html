@@ -1,0 +1,109 @@
+<div class="container-fluid mt-36 mb-5">
+  <!---Card box--->
+  <div class="row justify-content-around">
+    <!----Situação---->
+    <div class="my-2 col-9 col-md-3 d-flex border-lg bg-white border-l-primary shadow-sm py-3">
+      <div>
+        <h4 class="text-primary" style="font-size: large;">Situação</h4>
+        <span style="font-size: x-large;">Pendente</span>
+      </div>
+      <div class="my-auto ml-auto">
+        <i class="fas fa-3x fa-user-check text-light-gray"></i>
+      </div>
+    </div>
+    <!---------------->
+
+    <!--Número de participantes-->
+    <div class="my-2 col-9 col-md-3 d-flex border-lg bg-white border-l-success shadow-sm py-3">
+      <div>
+        <h4 class="text-success" style="font-size: large;">Participantes</h4>
+        <span style="font-size: x-large;">2019</span>
+      </div>
+      <div class="my-auto ml-auto">
+        <i class="fas fa-3x fa-users text-light-gray"></i>
+      </div>
+    </div>
+    <!--------------------------->
+
+    <!---Data de encerramento--->
+    <div class="my-2 col-9 col-md-3 d-flex border-lg bg-white border-l-danger shadow-sm py-3">
+      <div>
+        <h4 class="text-danger" style="font-size: large;">Encerra em</h4>
+        <span style="font-size: x-large;">31/12/2019</span>
+      </div>
+      <div class="my-auto ml-auto">
+        <i class="fas fa-3x fa-calendar-times text-light-gray"></i>
+      </div>
+    </div>
+    <!-------------------------->
+  </div>
+  <!-------------->
+
+  <!--Informações da votação-->
+  <div class="row justify-content-around mt-5">
+    <!--Opções de voto e outras informações-->
+    <div class="col-9 bg-white mb-3 col-md-7 border-lg border-t-light-gray shadow-sm">
+      <div class="my-4 ml-2">
+        <h3 class="text-primary">Título da votação</h3>
+        <span>Descrição do tema da votação e outros comentários</span>
+      </div>
+      <div class="ml-2">
+        <span class="text-primary">Opções de voto</span>
+        <!----Escolhas---->
+        <div>
+          <!----Opção---->
+          <div class="my-3">
+            <input type="checkbox" class=""/>
+            <span class="pl-2">Opção 1</span>
+          </div>
+          <!------------->
+
+          <!----Opção---->
+          <div class="my-3">
+            <input type="checkbox" class=""/>
+            <span class="pl-2">Opção 2</span>
+          </div>
+          <!------------->
+
+          <!----Opção---->
+          <div class="my-3">
+            <input type="checkbox" class=""/>
+            <span class="pl-2">Opção 3</span>
+          </div>
+          <!------------->
+
+          <!----Opção---->
+          <div class="my-3">
+            <input type="checkbox" class=""/>
+            <span class="pl-2">Opção 4</span>
+          </div>
+          <!------------->
+
+          <!----Opção---->
+          <div class="my-3">
+            <input type="checkbox" class=""/>
+            <span class="pl-2">Opção 5</span>
+          </div>
+          <!------------->
+        </div>
+        <!---------------->
+      </div>
+      <div class="text-center my-4">
+        <button type="button" class="btn rounded-pill mx-3 my-1 btn-primary font-weight-semibold">Confirmar voto</button>
+      </div>
+    </div>
+    <!--------------------------------------->
+
+    <!--Dados da votação-->
+    <div class="col-9 bg-white col-md-3 border-lg border-t-light-gray shadow-sm mb-5">
+      <div class="my-4 ml-2">
+        <h3 class="text-primary">Resultados gerais</h3>
+      </div>
+      <div class="d-flex justify-content-center h-75">
+        <div id="donutchart" class="" style="width: 95%; height: 95%;"></div>
+      </div>
+    </div>
+    <!-------------------->
+  </div>
+  <!-------------------------->
+</div>

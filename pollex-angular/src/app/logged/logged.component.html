@@ -1,6 +1,6 @@
 <!--Navbar-->
 <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm py-3 sticky">
-  <a [routerLink]="['/']" class="navbar-brand ml-2">pollex</a>
+  <a class="navbar-brand ml-2" [routerLink]="['/logged']">pollex</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -10,10 +10,7 @@
     <ul class="navbar-nav mr-auto">
     </ul>
     <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2 rounded-pill my-2" type="number" placeholder="Número USP" aria-label="Número USP">
-      <input class="form-control mr-sm-2 rounded-pill my-2" type="password" placeholder="Senha" aria-label="Senha">
-      <a [routerLink]="['/logged']" class="btn my-md-0 my-2 font-weight-semibold text-lg hover-primary" type="submit">Entrar</a>
-      <a [routerLink]="['/sign-up']" class="btn my-md-0 my-2 font-weight-semibold text-lg hover-primary">Cadastrar</a>
+      <button class="btn my-2 my-sm-0 font-weight-semibold text-lg hover-primary" type="submit">Sair</button>
     </form>
   </div>
 </nav>

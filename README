@@ -1,0 +1,97 @@
+
+
+  POLLEX - An open source application for conducing online polls.
+  ---------------------------------------------------------------
+
+  Copyright (c) 2019 - Open Source Competence Center at ICMC
+  This is free source software distributed under the terms of GNU GPL vr.3
+
+
+
+         _
+        | \        
+        | |___
+  _____/  (___)    Pollex: (from Latin 'pollex'), thumb.
+ |o|     (_____)
+ |_|____  (____)   A thumbs-up tool for collaborative teams.
+        \_(___)   
+
+  
+
+  Essentials
+  ------------------------------
+
+  Pollex is an tool to support online communities to reach consensus
+
+  on opinions, preferences and joint decisions.
+
+  You may want to use Pollex to carrying out online polls to
+
+  chose an option from among a finite set of predefined alternatives or to
+
+  inform their availability for scheduling an event in a range or dates.
+
+  Beyond the capabilities of some alternative tools, Pollex allows  flexible
+
+  customization of pools rules and decision criteria such as
+
+     * making a single choice between mutually exclusive alternatives;
+  
+     * choosing one or more options between a set of possible choices;
+
+     * expressing relative preferences between a list of options;
+
+  Also, the poll policy and decision criteria may be chosen from different
+
+  available formats to meet the team needs. For instance it may 
+
+     * allow or not partial results to be known during the poll;
+
+     * allow or not participants to change votes before the poll ends;
+
+     * votes to be either secret or publicly visible by other participants
+
+     * poll to end either after a deadline or when a majority is reached.
+
+
+  Project development notes
+  ------------------------------
+
+  Pollex was originally developed as a didactic project in an undergraduate
+  course on Open Source Systems for Computer Science / Engineering students
+  at University of Sao Paulo, with support of the ICMC Open Source Competence
+  Center (CCOS).
+
+  All developers mentioned in the file AUTHORS are acknowledged.
+
+  The latest release of Pollex may be found at the project repository
+  https://github.com/flossschool/pollex
+
+  IMPORTANT: The software is still in alpha stage and not all of the
+  	     aforementioned feature may be already available.
+
+  You are more than welcome to contribute to further development of Pollex.
+
+  Installing the software
+  ------------------------------
+
+        
+
+    For directions on building and installing Pollex, please
+    refer to file INSTALL.
+
+  Contributing to the project
+  ------------------------------
+
+    If you would be so kind as to contributing to _Pollex_ with either code,
+    bug reports, suggestions or general feedback, please, start by reading
+    the developer documentation at doc/developer
+    
+  Copyright and licensing
+  ------------------------------
+
+   For author, copyright and licensing information please refer to the
+   respective files AUTHORS and LICENSE.
+
+
+
